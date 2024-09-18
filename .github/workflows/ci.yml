@@ -21,7 +21,6 @@ jobs:
         with:
           toolchain: stable
           override: true
-          override-file: Cargo.toml
 
       - name: Build
         run: cargo build --verbose
