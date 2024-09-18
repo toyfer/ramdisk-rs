@@ -1,0 +1,9 @@
+[[package]]
+name = "ramdisk"
+version = "0.1.0"
+
+[dependencies]
+clap = { version = "4.0", features = ["derive"] }
+ctrlc = "3.2"
+memmap = "0.7"
+winapi = { version = "0.3", features = ["winioctl", "fileapi", "handleapi", "winbase", "winnt", "minwindef", "ioapiset"] }
