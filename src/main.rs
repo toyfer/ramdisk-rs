@@ -1,10 +1,20 @@
+#[cfg(windows)]
+use std::os::windows::ffi::OsStrExt;
+#[cfg(windows)]
+use std::os::windows::prelude::AsRawHandle;
+
+use clap::{Parser, ValueEnum};
+
+#[derive(Parser)]
+struct Args {
+    #[arg(short, long, default_value_t = 100)]
+    size: u32,
+}
 use clap::{Parser, ValueEnum};
 use ctrlc;
 use memmap::MmapMut;
 use std::ffi::OsStr;
 use std::fs::{OpenOptions, remove_file};
-use std::os::windows::ffi::OsStrExt; 
-use std::os::windows::prelude::AsRawHandle;
 use std::path::Path;
 use std::process::{Command, Stdio};
 use std::sync::{Arc, Mutex};  // 共有するためのArcとMutexを追加
